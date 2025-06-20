@@ -1,0 +1,110 @@
+.app__works {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.app__work-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 20px;
+}
+
+.app__work-item {
+  width: 350px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #1f2937;
+  color: var(--white-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  will-change: transform;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+.app__work-img {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.app__work-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  .app__flex {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.app__work-content {
+  margin-top: -4rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--gray-color);
+  }
+}
